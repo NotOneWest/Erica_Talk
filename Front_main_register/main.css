@@ -1,0 +1,67 @@
+.main {
+  width: 800px;
+  height: 600px;
+  background-color: #939396;
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+.main .logo {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin-left: 60px;
+  margin-top: 150px;
+}
+
+.main .login {
+  width: 300px;
+  height: 300px;
+  float: right;
+  background-color: white;
+  margin-right: 60px;
+  margin-top: 150px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.main .login-text {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.main .id, .main .pw, .main .submit {
+  display: inline-block;
+  width: 250px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+.main .submit {
+  width: 257px;
+  background-color: yellowgreen;
+}
+
+.main .register {
+  background-color: #F7931E;
+  border: 1px solid black;
+}
+
+.main .register-button-wrapper {
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.main .register-button-wrapper .register {
+  width: 100px;
+  height: 30px;
+}
+/*# sourceMappingURL=main.css.map */
