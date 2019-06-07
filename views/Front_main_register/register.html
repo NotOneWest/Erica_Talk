@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="register.css">
+    <title>회원가입</title>
+</head>
+<body>
+    <div class="register">
+        <p class="register-text">에리카톡 회원가입</p>
+
+        <form action="/register" method="POST">
+            <span>
+                <input class="id" type="text" name="name" required placeholder="아이디를 입력하세요." />
+                <button class="id_confirm_repetition">중복확인</button>
+            </span>
+
+            <input class="pw" type="password" name="pwd" required placeholder="비밀번호를 입력하세요." />
+            <input class="pw_check" type="password" name="pwdconf" required placeholder="비밀번호를 재입력하세요." />
+
+            <span>
+                <input class="nickname" type="text" name="nick" required placeholder="닉네임을 입력하세요." />
+                <button class="nickname_confirm_repetition">중복확인</button>
+            </span>
+
+            <input class="submit" type="submit" value="확인" />
+            <button class="close" onclick="window.close()">취소</button>    
+        </form>
+    </div>
+</body>
+</html>
