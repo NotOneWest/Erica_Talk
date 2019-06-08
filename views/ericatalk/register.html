@@ -14,7 +14,6 @@
         <form action="/register" method="POST">
             <span>
                 <input class="id" type="text" name="name" autocomplete="off" required placeholder="아이디를 입력하세요." />
-                <button class="id_confirm_repetition">중복확인</button>
             </span>
 
             <input class="pw" type="password" name="pwd" required placeholder="비밀번호를 입력하세요." />
@@ -22,12 +21,30 @@
 
             <span>
                 <input class="nickname" type="text" name="nick" autocomplete="off" required placeholder="닉네임을 입력하세요." />
-                <button class="nickname_confirm_repetition">중복확인</button>
             </span>
 
             <input class="submit" type="submit" value="확인" />
             <button class="close" onclick="history.go(-1)">취소</button>    
         </form>
     </div>
+
+    <% if(alert1 == true) { %>
+        <script text="type/javascript">
+            alert('이미 같은 아이디가 있습니다.');
+        </script>
+    <% } %>
+
+    <% if(alert2 == true) { %>
+        <script text="type/javascript">
+            alert('동일한 닉네임이 사용중입니다.');
+        </script>
+    <% } %>
+
+    <% if(alert3 == true) { %>
+        <script text="type/javascript">
+            alert('비밀번호가 일치하지 않습니다.');
+        </script>
+    <% } %>
+
 </body>
 </html>
