@@ -1,0 +1,66 @@
+.main {
+    width: 800px;
+    height: 600px;
+    background: radial-gradient( #434343, black);
+    border: 5px solid black;
+    border-radius: 10px;
+
+    .login {
+        width: 300px;
+        height: 300px;
+        background-color: rgb(254, 201, 9);
+        // margin-right: 60px;
+        // margin-top: 150px;
+        border: 3px solid black;
+        border-radius: 15px;
+        margin-left: 250px;
+        margin-top: 150px;
+    }
+
+    .login-text {
+        font-size: 30px;
+        margin-top: 15px;
+        // margin-left: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .id, .pw {
+        display: inline-block;
+        width: 250px;
+        height: 50px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        font-size: 25px;
+        border: 1px solid black;
+        padding-left: 15px;
+        border-radius: 10px;
+    }
+
+    .submit {
+        display: inline-block;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        margin-left: 75px;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+    }
+
+    .register {
+        display: inline-block;
+        width: 70px;
+        height: 20px;
+        // font-size: 0.3em;
+        margin-left: 115px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: yellowgreen; 
+        font-weight: bold;
+    }
+}
