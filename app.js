@@ -10,7 +10,7 @@ const io = socket(server)
 const sqlite3 = require('sqlite3').verbose()
 
 var entertime = new Array()
-var time = new Date()
+var time
 var pcount = 0
 
 // in memory DB
@@ -53,6 +53,7 @@ io.sockets.on('connection', function(socket) {
     /* 소켓에 이름 저장해두기 */
     socket.name = name
 
+    time = new Date()
     entertime[socket.name]=time.getTime()
 
     pcount++
@@ -65,6 +66,8 @@ io.sockets.on('connection', function(socket) {
   socket.on('message', function(data) {
     /* 받은 데이터에 누가 보냈는지 이름을 추가 */
     data.name = socket.name
+
+    time = new Date()
 
     db.exec("BEGIN")
     db.run("INSERT INTO chatting_room_name (name, message, ts) VALUES (?,?,?)",[data.name, data.message, time.getTime()])
@@ -92,8 +95,8 @@ io.sockets.on('connection', function(socket) {
   })
 })
 
-/* 서버를 8080 포트로 listen */
-server.listen(8080, function() {
+/* 서버를 3000 포트로 listen */
+server.listen(3000, function() {
   console.log('서버 실행 중..')
 })
 
