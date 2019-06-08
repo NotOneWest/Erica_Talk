@@ -22,7 +22,7 @@ app.listen(3000, function() {
 
 // 라우팅 처리
 app.get('/', function (req, res) { // req = request, res = respond
-    res.render('main.html');
+    res.render('index.html');
 });
 
 app.get('/register', function (req, res) { // req = request, res = respond
@@ -30,5 +30,5 @@ app.get('/register', function (req, res) { // req = request, res = respond
 });
   
 app.get('/chat', function (req, res) { // req = request, res = respond
-    res.render('index.html');
+    res.render('chat.html');
 });
