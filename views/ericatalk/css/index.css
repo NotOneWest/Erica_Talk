@@ -1,56 +1,62 @@
 .main {
   width: 800px;
   height: 600px;
-  background-color: #939396;
+  background: radial-gradient(#434343, black);
   border: 5px solid black;
   border-radius: 10px;
-}
-
-.main .logo {
-  display: inline-block;
-  width: 300px;
-  height: 300px;
-  margin-left: 60px;
-  margin-top: 150px;
 }
 
 .main .login {
   width: 300px;
   height: 300px;
-  float: right;
-  background-color: white;
-  margin-right: 60px;
-  margin-top: 150px;
+  background-color: #fec909;
   border: 3px solid black;
-  border-radius: 5px;
+  border-radius: 15px;
+  margin-left: 250px;
+  margin-top: 150px;
 }
 
 .main .login-text {
   font-size: 30px;
-  margin-top: 10px;
-  margin-left: 20px;
+  margin-top: 15px;
+  text-align: center;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
-.main .id, .main .pw, .main .submit {
+.main .id, .main .pw {
   display: inline-block;
   width: 250px;
   height: 50px;
-  margin-left: 20px;
-  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-bottom: 15px;
   font-size: 25px;
   border: 1px solid black;
-  padding-left: 5px;
+  padding-left: 15px;
+  border-radius: 10px;
 }
 
 .main .submit {
-  width: 257px;
-  background-color: yellowgreen;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: 75px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
 }
 
 .main .register {
-  background-color: #F7931E;
-  border: 1px solid black;
+  font-size: 1px;
+  font-weight: bold;
+}
+
+.main .register:hover {
+  text-decoration: underline;
 }
 
 .main .register-button-wrapper {
