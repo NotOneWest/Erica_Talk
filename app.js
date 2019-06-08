@@ -82,16 +82,6 @@ io.sockets.on('connection', function(socket) {
 
     if(--pcount == 0)
     {
-      db.serialize(function()
-      {
-        db.close((err) => {
-          if (err) {
-            console.error(err.message)
-          }
-          console.log('Close the database connection.')
-        })
-      })
-      
       db.exec("BEGIN")
       db.run("DROP TABLE IF EXISTS chatting_room_name")
       db.exec("COMMIT")
