@@ -1,93 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width", initial-scale="1">
-        <title>에리카톡</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-    </head>
-
-       
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="./css/index.css">
+    <title>로그인</title>
+</head>
 <body>
-   <style type="text/css">    
+    <div class="main">
+        <img class="logo" src="./images/HYU_symbol_basic_png.png" />
+        <div class="login">
+            <p class="login-text">에리카톡 로그인</p>
+            <form action="/" method="POST">
+                <input type="text" class="id" name="name" required placeholder="아이디를 입력하세요."/>
+                <input type="password" class="pw" name="pwd" required placeholder="비밀번호를 입력하세요."/>
 
-       body{
-           background-color: beige;
-       }
-       #btn{
-        color: black;
-       }
-       #chat{
-           margin-left: 300px;
-       }
-  
-       
-    </style>
-    
-    
-    
-   <div class="row">
-      <div class="col-md-2">
-      <div><a class="btn btn-info btn-lg btn-block" href="#" role="button">
-          채팅방 <span class="glyphicon glyphicon-download"></span>
-      </a></div>
-      
-      <div><a class="btn btn-primary btn-lg btn-block" href="#" role="button">채팅방1</a></div>
-      
-      <div><a class="btn btn-primary btn-lg btn-block" href="#" role="button">채팅방2</a></div>
-      
-      <div><a class="btn btn-primary btn-lg btn-block" href="#" role="button">채팅방3</a></div>
-      
-      <div><a class="btn btn-primary btn-lg btn-block" href="#" role="button">채팅방4</a></div>
-      
-      <div><a class="btn btn-primary btn-lg btn-block" href="#" role="button">채팅방5</a></div>
-      
-      
-      <div><a class="btn btn-info btn-lg btn-block" href="#" role="button">채팅방 생성 <span class="glyphicon glyphicon-plus-sign"> </span></a></div>
-      
-      
-      </div>
-      
-      
-      
-      
-      
-       <div id="chatback" class="col-md-10">
-        <button id="btn" type="button" class="btn btn-lg btn-primary btn-block" disabled="disabled">채팅방 이름</button>
-        
-           <button type="button" class="btn btn-lg btn-default btn-block" disabled="disabled"> <p class="text-left">상대방의 채팅 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, esse.</p></button>
-           <button type="button" class="btn btn-lg btn-default btn-block" disabled="disabled"> <p class="text-left">상대방의 채팅 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, esse.</p></button>
-           <button type="button" class="btn btn-lg btn-default btn-block" disabled="disabled"> <p class="text-left">상대방의 채팅 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, esse.</p></button>
-        
-        <button type="button" class="btn btn-lg btn-warning btn-block" disabled="disabled"><p class="text-right">내 채팅: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, et.  </p></button>
-        
-         <button type="button" class="btn btn-lg btn-default btn-block" disabled="disabled"> <p class="text-left">상대방의 채팅 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, esse.</p></button>
-         
-        <button type="button" class="btn btn-lg btn-warning btn-block" disabled="disabled"><p class="text-right">내 채팅: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, et.  </p></button>
-        
-        <button type="button" class="btn btn-lg btn-warning btn-block" disabled="disabled"><p class="text-right">내 채팅: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, et.  </p></button>
-        
-        <button type="button" class="btn btn-lg btn-default btn-block" disabled="disabled"> <p class="text-left">상대방의 채팅 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, esse.</p></button>
-         
-         <button type="button" class="btn btn-lg btn-default btn-block" disabled="disabled"> <p class="text-left">상대방의 채팅 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, esse.</p></button>
-         
-         
-         <button type="button" class="btn btn-lg btn-default btn-block" disabled="disabled"> <p class="text-left">상대방의 채팅 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, esse.</p></button>
-        
-        <button type="button" class="btn btn-lg btn-warning btn-block" disabled="disabled"><p class="text-right">내 채팅: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, et.  </p></button>
-        
-        
-        <p>                                                         </p>
-<div class="input-group input-group-lg">
-  <input type="text" class="form-control" placeholder="메세지를 입력하세요" aria-describedby="sizing-addon1"><span class="input-group-addon" id="sizing-addon1">
-<a class="btn btn-default btn-xs btn-block" href="#" role="button">전송하기</a>
-  </span>
-</div>
-
-
-           
-           
-</div>
-</div>
+                <input type="submit" class="submit" value="로그인" />
+            </form>
+                
+            <div class="register-button-wrapper">
+                <button class="register" onclick="window.open('register.html','회원가입','width=470,height=550,location=no,status=no,scrollbars=yes');">회원가입</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
