@@ -4,12 +4,12 @@ var express = require('express');
 var app = express();
 
 // ejs view와 렌더링 설정
-app.set('views', __dirname + '/views/Front_main_register');
+app.set('views', __dirname + '/views/ericatalk');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 // 정적 파일 제공을 위한 경로 설정
-app.use(express.static(__dirname + '/views/Front_main_register'));
+app.use(express.static(__dirname + '/views/ericatalk'));
 
 // body-parser 기본 모듈 불러오기 및 설정 (POSt req 해석)
 var bodyParser = require('body-parser');
