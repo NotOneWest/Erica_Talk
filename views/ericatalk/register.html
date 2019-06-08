@@ -13,7 +13,7 @@
 
         <form action="/register" method="POST">
             <span>
-                <input class="id" type="text" name="name" required placeholder="아이디를 입력하세요." />
+                <input class="id" type="text" name="name" autocomplete="off" required placeholder="아이디를 입력하세요." />
                 <button class="id_confirm_repetition">중복확인</button>
             </span>
 
@@ -21,7 +21,7 @@
             <input class="pw_check" type="password" name="pwdconf" required placeholder="비밀번호를 재입력하세요." />
 
             <span>
-                <input class="nickname" type="text" name="nick" required placeholder="닉네임을 입력하세요." />
+                <input class="nickname" type="text" name="nick" autocomplete="off" required placeholder="닉네임을 입력하세요." />
                 <button class="nickname_confirm_repetition">중복확인</button>
             </span>
 
