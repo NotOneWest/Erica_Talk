@@ -114,7 +114,7 @@ app.post('/', function (req, res) {
                 //io.sockets.emit('connect',{nick : rows[0].nickname}) // 배열 인덱스 적어야 됨.
                 nick = rows[0].nickname
                 db.exec("COMMIT")
-                res.render('chat.ejs');
+                res.render('chat.html');
             } else {
                 db.exec("COMMIT");
                 res.render('index.ejs', {alert_id: false, alert_pwd: true});
