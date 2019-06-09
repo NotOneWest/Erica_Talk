@@ -23,12 +23,11 @@
 
         #chat {
             width: 660px;
-            height: 479px;
+            height: 468px;
         }
 
         #black {
             color: white;
-            border-color: yellow;
         }
 
         #yellow {
@@ -61,47 +60,28 @@
             <div class="col-md-2" style="height: 600px; background-color: white;">
                 <div>
                     <a id="black" class="btn btn-block" href="#" role="button" style="background-color: black; padding: 15px">
-                        NickName
+                        <%= nickname %>
                     </a>
                 </div>
+                <p></p>
+                <div style="overflow: scroll; height: 480px; width: 120px; background-color: skyblue;">
+                    <div id="names">
 
-                <div style="overflow:scroll; width:120px; height:240px; background-color: white">
-                    <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방1</a></div>
-
-                    <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방2</a></div>
-
-                    <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방3</a></div>
-
-                    <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방4</a></div>
-
-                    <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방5</a></div>
+                    </div>
                 </div>
 
                 <div>
-                    <a id="black" class="btn btn-lg btn-block" href="#" role="button" style="background-color: black">
-                        채팅방 
-                        <span class="glyphicon glyphicon-plus-sign"> </span>
+                    <a id="black" class="btn btn-block" href="#" role="button" style="background-color: black; padding: 15px">
+                        인원수
                     </a>
-                </div>
-
-                <div style="overflow: scroll; height: 260px; width: 120px; background-color: white">
-                    <div id="names">
-                        <p>A</p>
-                        <p>B</p>
-                        <p>B</p>
-                        <p>B</p>
-                        <p>B</p>
-                        <p>B</p>
-                        <p>B</p>
-                    </div>
                 </div>
             </div>
 
             <div id="chatback" class="col-md-10">
                 <div class="panel panel-default">
-                    <div class="panel-body" style="text-align: left;font-size: 20px;">
+                    <div class="panel-body" style="text-align: left;font-size: 20px; background-color: sandybrown">
                         <button class="btn btn-default" type="button" style="margin-right: 220px;">나가기</button>
-                        <strong>채팅방 이름</strong>
+                        <strong>채팅방</strong>
                     </div>
                 </div>
 
@@ -111,7 +91,7 @@
 
                 <div class="input-group input-group-lg">
                     <input type="text" class="form-control" placeholder="메세지를 입력하세요" id="input" aria-describedby="sizing-addon1">
-                    <span class="input-group-addon" id="sizing-addon1">
+                    <span class="input-group-addon" id="sizing-addon1" style="padding: 5px;">
                         <button onclick="send()">전송</button>
                     </span>
                 </div>
