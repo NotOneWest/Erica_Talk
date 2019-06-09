@@ -94,7 +94,7 @@ server.listen(3000, function() {
 
 // 라우팅 처리
 app.get('/', function (req, res) {
-    res.render('index.html');
+    res.render('index.ejs', {alert_id: false, alert_pwd: false});
 });
 
 app.post('/', function (req, res) {
@@ -107,17 +107,17 @@ app.post('/', function (req, res) {
     db.all(sql, [username], function(err, rows) {
         if(rows.length === 0){
             db.exec("COMMIT");
-            res.render('index.html');
+            res.render('index.ejs', {alert_id: true, alert_pwd: false});
         } else {
             var db_pwd = rows[0].password;
             if(password === db_pwd){
                 //io.sockets.emit('connect',{nick : rows[0].nickname}) // 배열 인덱스 적어야 됨.
                 nick = rows[0].nickname
                 db.exec("COMMIT")
-                res.render('chat.html');
+                res.render('chat.ejs');
             } else {
                 db.exec("COMMIT");
-                res.render('index.html');
+                res.render('index.ejs', {alert_id: false, alert_pwd: true});
             }
         }
     });
