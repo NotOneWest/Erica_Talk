@@ -29,20 +29,11 @@ db_chat.exec("BEGIN")
 db_chat.run('CREATE TABLE IF NOT EXISTS user_info(username TEXT NOT NULL, password TEXT NOT NULL, nickname TEXT NOT NULL)');
 db_chat.exec("COMMIT");
 
-// DB 설정
-const sqlite3 = require('sqlite3').verbose();
- 
-let db = new sqlite3.Database('./DB/main.db');
-
-db.exec("BEGIN")
-db.run('CREATE TABLE IF NOT EXISTS user_info(username TEXT NOT NULL, password TEXT NOT NULL, nickname TEXT NOT NULL)');
-db.exec("COMMIT");
-
 // body-parser 기본 모듈 불러오기 및 설정 (POSt req 해석)
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
-db_chat.run("CREATE TABLE IF NOT EXISTS chatting_room_name (name TEXT NOT NULL, message TEXT DEFAULT 'A', ts INT)")
+db_chat.run("CREATE TABLE IF NOT EXISTS chatting_room_name (name TEXT NOT NULL, message TEXT DEFAULT '', ts INT)")
 
 io.sockets.on('connection', function(socket) {
 
@@ -69,6 +60,8 @@ io.sockets.on('connection', function(socket) {
     data.name = socket.name
 
     time = new Date()
+
+    console.log('Message : '+data.message)
 
     db_chat.exec("BEGIN")
     db_chat.run("INSERT INTO chatting_room_name (name, message, ts) VALUES (?,?,?)",[data.name, data.message, time.getTime()])
@@ -103,11 +96,7 @@ server.listen(3000, function() {
 
 // 라우팅 처리
 app.get('/', function (req, res) {
-<<<<<<< HEAD
     res.render('index.html');
-=======
-    res.render('index.html', {alert1: false, alert2: false});
->>>>>>> 9da597c5b5fd4f05f2d6c969ae8f11cb76835239
 });
 
 app.post('/', function (req, res) {
@@ -120,7 +109,6 @@ app.post('/', function (req, res) {
     db.all(sql, [username], function(err, rows) {
         if(rows.length === 0){
             db.exec("COMMIT");
-<<<<<<< HEAD
             res.render('index.html');
         } else {
             var db_pwd = rows[0].password;
@@ -141,26 +129,6 @@ app.get('/register', function (req, res) {
     res.render('register.html', {alert1: false, alert2: false, alert3: false});
 });
 
-=======
-            res.render('index.html', {alert1: true, alert2: false});
-        } else {
-            var db_pwd = rows[0].password;
-            if(password === db_pwd){
-                db.exec("COMMIT");
-                res.render('chat.html');
-            } else {
-                db.exec("COMMIT");
-                res.render('index.html', {alert1: false, alert2: true});
-            }
-        }
-    });
-});
-
-app.get('/register', function (req, res) {
-    res.render('register.html', {alert1: false, alert2: false, alert3: false});
-});
-
->>>>>>> 9da597c5b5fd4f05f2d6c969ae8f11cb76835239
 app.post('/register', function (req, res) {
     var username = req.body.name;
     var password = req.body.pwd;
@@ -203,40 +171,4 @@ app.post('/register', function (req, res) {
             });
         }
     });
-<<<<<<< HEAD
 });
-
-/*
-let db = new sqlite3.Database('./DB/test.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Connected to the database.');
-});
-
- //:memory:
-
-// IF NOT EXIST 를 사용하면 DB 가 이미 있는 경우 아무것도 바뀌지 않음. 따라서 다른 형태를 취해야 됨.
-//db.run("DROP TABLE IF EXISTS chatting_room_name")
-//db.run("CREATE TABLE chatting_room_name (name TEXT NOT NULL DEFAULT 'Anonymous', message TEXT, ts TIMESTAMP DEFAULT CURRENT_TIME)")
-
-/*
-app.use('/css', express.static('../css'))
-app.use('/js', express.static('./'))
-
- Get 방식으로 / 경로에 접속하면 실행 됨 
-app.get('/', function(request, response) {
-  fs.readFile('./static/index.html', function(err, data) {
-    if(err) {
-      response.send('에러')
-    } else {
-      response.writeHead(200, {'Content-Type':'text/html'})
-      response.write(data)
-      response.end()
-    }
-  })
-})
-*/
-=======
-});
->>>>>>> 9da597c5b5fd4f05f2d6c969ae8f11cb76835239
