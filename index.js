@@ -29,6 +29,15 @@ db_chat.exec("BEGIN")
 db_chat.run('CREATE TABLE IF NOT EXISTS user_info(username TEXT NOT NULL, password TEXT NOT NULL, nickname TEXT NOT NULL)');
 db_chat.exec("COMMIT");
 
+// DB 설정
+const sqlite3 = require('sqlite3').verbose();
+ 
+let db = new sqlite3.Database('./DB/main.db');
+
+db.exec("BEGIN")
+db.run('CREATE TABLE IF NOT EXISTS user_info(username TEXT NOT NULL, password TEXT NOT NULL, nickname TEXT NOT NULL)');
+db.exec("COMMIT");
+
 // body-parser 기본 모듈 불러오기 및 설정 (POSt req 해석)
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -94,7 +103,11 @@ server.listen(3000, function() {
 
 // 라우팅 처리
 app.get('/', function (req, res) {
+<<<<<<< HEAD
     res.render('index.html');
+=======
+    res.render('index.html', {alert1: false, alert2: false});
+>>>>>>> 9da597c5b5fd4f05f2d6c969ae8f11cb76835239
 });
 
 app.post('/', function (req, res) {
@@ -107,6 +120,7 @@ app.post('/', function (req, res) {
     db.all(sql, [username], function(err, rows) {
         if(rows.length === 0){
             db.exec("COMMIT");
+<<<<<<< HEAD
             res.render('index.html');
         } else {
             var db_pwd = rows[0].password;
@@ -127,6 +141,26 @@ app.get('/register', function (req, res) {
     res.render('register.html', {alert1: false, alert2: false, alert3: false});
 });
 
+=======
+            res.render('index.html', {alert1: true, alert2: false});
+        } else {
+            var db_pwd = rows[0].password;
+            if(password === db_pwd){
+                db.exec("COMMIT");
+                res.render('chat.html');
+            } else {
+                db.exec("COMMIT");
+                res.render('index.html', {alert1: false, alert2: true});
+            }
+        }
+    });
+});
+
+app.get('/register', function (req, res) {
+    res.render('register.html', {alert1: false, alert2: false, alert3: false});
+});
+
+>>>>>>> 9da597c5b5fd4f05f2d6c969ae8f11cb76835239
 app.post('/register', function (req, res) {
     var username = req.body.name;
     var password = req.body.pwd;
@@ -169,6 +203,7 @@ app.post('/register', function (req, res) {
             });
         }
     });
+<<<<<<< HEAD
 });
 
 /*
@@ -202,3 +237,6 @@ app.get('/', function(request, response) {
   })
 })
 */
+=======
+});
+>>>>>>> 9da597c5b5fd4f05f2d6c969ae8f11cb76835239
