@@ -12,14 +12,17 @@
         <div class="login-wrapper">
             <div class="login">
                 <p class="login-text">SIGN IN</p>
+
                 <form action="/" method="POST">
                     <input type="text" class="id" name="name" autocomplete="off" required placeholder="ID"/>
                     <input type="password" class="pw" name="pwd" required placeholder="Password"/>
     
                     <input type="submit" class="submit" value="SIGN IN" />
                 </form>
-                    
-                <input type="submit" class="register" value="SIGN UP"/>
+                
+                <form action="/register" method="GET">
+                    <input type="submit" class="register" value="SIGN UP"/>
+                </form>
             </div>
         </div>
     </div>
