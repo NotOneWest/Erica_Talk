@@ -22,18 +22,18 @@
                 
                 <form action="/register" method="GET">
                     <input type="submit" class="register" value="SIGN UP"/>
-                </form>
+                </form>                
             </div>
         </div>
     </div>
 
-    <% if(alert1 == true) { %>
+    <% if(alert_id === true) { %>
         <script text="type/javascript">
             alert('아이디가 존재하지 않습니다.');
         </script>
     <% } %>
 
-    <% if(alert2 == true) { %>
+    <% if(alert_pwd === true) { %>
         <script text="type/javascript">
             alert('비밀번호가 다릅니다.');
         </script>

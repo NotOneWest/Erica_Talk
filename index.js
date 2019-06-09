@@ -61,8 +61,6 @@ io.sockets.on('connection', function(socket) {
 
     time = new Date()
 
-    console.log('Message : '+data.message)
-
     db_chat.exec("BEGIN")
     db_chat.run("INSERT INTO chatting_room_name (name, message, ts) VALUES (?,?,?)",[data.name, data.message, time.getTime()])
     // 자바스크립트는 기본으로 () 가 아니라 [] 를 씁니다.
@@ -96,7 +94,7 @@ server.listen(3000, function() {
 
 // 라우팅 처리
 app.get('/', function (req, res) {
-    res.render('index.html');
+    res.render('index.ejs', {alert_id: false, alert_pwd: false});
 });
 
 app.post('/', function (req, res) {
@@ -109,7 +107,7 @@ app.post('/', function (req, res) {
     db.all(sql, [username], function(err, rows) {
         if(rows.length === 0){
             db.exec("COMMIT");
-            res.render('index.html');
+            res.render('index.ejs', {alert_id: true, alert_pwd: false});
         } else {
             var db_pwd = rows[0].password;
             if(password === db_pwd){
@@ -119,7 +117,7 @@ app.post('/', function (req, res) {
                 res.render('chat.html');
             } else {
                 db.exec("COMMIT");
-                res.render('index.html');
+                res.render('index.ejs', {alert_id: false, alert_pwd: true});
             }
         }
     });
