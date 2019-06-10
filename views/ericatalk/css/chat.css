@@ -13,6 +13,7 @@
 #chat {
   height: 90%;
   width: 100%;
+  border-radius: 20px;
   overflow-y: auto;
 }
 
@@ -22,6 +23,7 @@
   margin: auto;
   background-color: aquamarine;
   text-align: center;
+  border-radius: 20px;
   margin-top: 10px;
 }
 
@@ -30,6 +32,7 @@
   width: 90%;
   margin: auto;
   background-color: indianred;
+  border-radius: 20px;
   text-align: center;
   margin-top: 10px;
 }
@@ -40,6 +43,7 @@
   margin: auto;
   text-align: center;
   background-color: yellow;
+  border-radius: 20px;
   border-radius: 5px;
   margin-top: 10px;
 }
@@ -50,6 +54,7 @@
   margin: auto;
   text-align: center;
   background-color: skyblue;
+  border-radius: 20px;
   border-radius: 5px;
   margin-top: 10px;
 }

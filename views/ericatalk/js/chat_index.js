@@ -13,7 +13,7 @@ socket.on('update', function(data) {
   var chat = document.getElementById('chat')
 
   var message = document.createElement('div')
-  var node = document.createTextNode(`${data.name}: ${data.message}`)
+  var node = document.createTextNode(`${data.name} : ${data.message}`)
   var className = ''
 
   // 타입에 따라 적용할 클래스를 다르게 지정

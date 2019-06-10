@@ -21,8 +21,7 @@ app.engine('html', require('ejs').renderFile);
 
 // 정적 파일 제공을 위한 경로 설정
 app.use(express.static(__dirname + '/views/ericatalk'));
- 
-let db = new sqlite3.Database('./DB/main.db');
+
 let db_chat = new sqlite3.Database('./DB/chat.db');
 
 db_chat.exec("BEGIN")
@@ -77,9 +76,9 @@ io.sockets.on('connection', function(socket) {
 
     if(--pcount == 0)
     {
-      db.exec("BEGIN")
-      db.run("DROP TABLE IF EXISTS chatting_room_name")
-      db.exec("COMMIT")
+      db_chat.exec("BEGIN")
+      db_chat.run("DROP TABLE IF EXISTS chatting_room_name")
+      db_chat.exec("COMMIT")
     }
 
     /* 나가는 사람을 제외한 나머지 유저에게 메시지 전송 */
@@ -102,21 +101,21 @@ app.post('/', function (req, res) {
     var password = req.body.pwd;
 
     // DB 처리
-    db.exec("BEGIN");
+    db_chat.exec("BEGIN");
     var sql = 'SELECT * FROM user_info WHERE username = ?';
-    db.all(sql, [username], function(err, rows) {
+    db_chat.all(sql, [username], function(err, rows) {
         if(rows.length === 0){
-            db.exec("COMMIT");
+            db_chat.exec("COMMIT");
             res.render('index.ejs', {alert_id: true, alert_pwd: false});
         } else {
             var db_pwd = rows[0].password;
             if(password === db_pwd){
                 //io.sockets.emit('connect',{nick : rows[0].nickname}) // 배열 인덱스 적어야 됨.
                 nick = rows[0].nickname
-                db.exec("COMMIT")
+                db_chat.exec("COMMIT")
                 res.render('chat.html', {nickname: rows[0].nickname});
             } else {
-                db.exec("COMMIT");
+                db_chat.exec("COMMIT");
                 res.render('index.ejs', {alert_id: false, alert_pwd: true});
             }
         }
@@ -134,35 +133,35 @@ app.post('/register', function (req, res) {
     var nickname = req.body.nick;
 
     // DB 설정
-    db.exec("BEGIN");
+    db_chat.exec("BEGIN");
     var sql = 'SELECT * FROM user_info WHERE username = ?';
-    db.all(sql, [username], function(err, rows) {
+    db_chat.all(sql, [username], function(err, rows) {
         if(rows.length != 0){
-            db.exec("COMMIT");
+            db_chat.exec("COMMIT");
             res.render('register.html', {alert1: true, alert2: false, alert3: false});
         } else {
-            db.exec("COMMIT");
-            db.exec("BEGIN");
+            db_chat.exec("COMMIT");
+            db_chat.exec("BEGIN");
             sql = 'SELECT * FROM user_info WHERE nickname = ?';
-            db.all(sql, [nickname], function(err, rows) {
+            db_chat.all(sql, [nickname], function(err, rows) {
                 if(rows.length != 0){
-                    db.exec("COMMIT");
+                    db_chat.exec("COMMIT");
                     res.render('register.html', {alert1: false, alert2: true, alert3: false});
                 } else {
                     sql = 'INSERT INTO user_info VALUES(?, ?, ?)';
                     if(password != passwordconf){
-                        db.exec("COMMIT");
+                        db_chat.exec("COMMIT");
                         res.render('register.html', {alert1: false, alert2: false, alert3: true});
                     } else {
-                        db.exec("COMMIT");
-                        db.exec("BEGIN");
-                        db.run(sql, [username, password, nickname], function(err, rows) {
+                        db_chat.exec("COMMIT");
+                        db_chat.exec("BEGIN");
+                        db_chat.run(sql, [username, password, nickname], function(err, rows) {
                             if (err) {
                                 return console.error(err.message);
                             }
                             console.log(`Rows inserted ${this.changes}`);
                         });
-                        db.exec("COMMIT");
+                        db_chat.exec("COMMIT");
                         res.redirect('/');
                     }
                 }
