@@ -11,7 +11,7 @@ app.once('ready', function() {
   if (process.platform == 'darwin') {
     template = [
       {
-        label: 'Gradios',
+        label: 'Erica_Talk',
         submenu: [
           {
             label: 'About Gradios',
@@ -80,7 +80,7 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     resizable: false,
-    width: 900,
+    width: 840,
     height: 640,
     title: "Gradios",
     frame: true,
