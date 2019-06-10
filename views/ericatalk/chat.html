@@ -1,102 +1,83 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>에리카톡</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <meta charset="utf-8">
-        <title>채팅</title>
-        <link rel="stylesheet" href="/css/index.css">
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="/js/index.js"></script>
-  </head>
-    </head>
 
-       
+<head>
+    <meta charset="utf-8">
+    <title>에리카톡</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/chat.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat_index.js"></script>
+</head>
+
 <body>
-   <style type="text/css">    
-       #full{
-           width: 800px;
-           height: 600px;
-           background-color: white;
-            
-       }
-       #btn{
-        background-color: black;
-       }
-       #chat{
-           margin-left: 300px;
-       }
-       #black{
-           color: white;
-           border-color: yellow;
-       }
-       #yellow{
-           color: black;
-           background-color: yellow;
-           border-color: black;
-       }
-       #chattop{
-           color: white;
-       }
-       #mychat{
-           border-color: black;
-       }
-       #otherchat{
-           border-color: yellow;
-       }
-    </style>
-    
-    
-    <div id="full">
-   <div class="row">
-      <div class="col-md-2" style="border-right:0px">
-         
-         <div><a id="black" class="btn btn-block" href="#" role="button" style="background-color: black">
-          채팅방 <span class="glyphicon glyphicon-comment" style="color: white"></span>
-      </a></div>
-      
-      <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅</a></div>
+    <style type="text/css">
+        #full {
+            width: 800px;
+            height: 600px;
+            background-color: white;
+        }
 
-      <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방2</a></div>
-      
-      <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방3</a></div>
-      
-      <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방4</a></div>
-      
-      <div><a id="yellow" class="btn btn-lg btn-block" href="#" role="button">채팅방5</a></div>
-      
-      
-      <div><a id="black" class="btn btn-lg btn-block" href="#" role="button" style="background-color: black">채팅방 <span class="glyphicon glyphicon-plus-sign"> </span></a></div>
-      
-      
-      </div>
-      
-      
-      
-      
-      
-       <div id="chatback" class="col-md-10">
-           
-           <div><a id="chattop" class="btn btn-lg btn-block" href="#" role="button" style="background-color: black">
-            채팅방 이름    
-      </a></div>
-      
-           <h4></h4>
-      <div id="chat">
-        <!-- 채팅 메시지 영역 -->
-      </div>
-        
-        
-        <p>                                                         </p>
-        
-<div class="input-group input-group-lg">
-  <input type="text" class="form-control" placeholder="메세지를 입력하세요" id="input" aria-describedby="sizing-addon1"><span class="input-group-addon" id="sizing-addon1">
-<button onclick="send()">전송</button>
-  </span>
-</div>     
-</div>
-</div>
-</div>
+        #btn {
+            background-color: black;
+        }
+
+        #chat {
+            width: 800px;
+            height: 495px;
+        }
+
+        #black {
+            color: white;
+        }
+
+        #yellow {
+            color: black;
+            background-color: yellow;
+            border-color: black;
+        }
+
+        #chattop {
+            color: white;
+        }
+
+        #mychat {
+            border-color: black;
+        }
+
+        #otherchat {
+            border-color: yellow;
+        }
+
+        #names {
+            font-size: 20px;
+            background-color: white;
+            text-align: center;
+        }
+    </style>
+
+    <div id="full">
+
+        <div class="panel-body" style="text-align: center; font-size: 20px; border-radius: 20px; background-color: salmon">
+            닉네임 : <strong><%= nickname %></%></strong>
+        </div>
+
+
+        <div id="chat" style="background-color: sandybrown">
+            <!-- 채팅 메시지 영역 -->
+        </div>
+
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="메세지를 입력하세요" id="input"
+                aria-describedby="sizing-addon1">
+            <span class="input-group-addon" id="sizing-addon1" style="padding: 5px;">
+                <button onclick="send()">전송</button>
+            </span>
+        </div>
+
+
+    </div>
 </body>
+
 </html>

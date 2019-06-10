@@ -1,7 +1,8 @@
 .main {
   width: 800px;
   height: 600px;
-  background: radial-gradient(#434343, black);
+  background: url("../images/background.jpg");
+  background-size: cover;
   border: 5px solid black;
   border-radius: 10px;
 }
