@@ -3,15 +3,10 @@
 
 ## 실행 하는 법
 
-* node.js 와 npm 이 설치가 되어있다고 하자.
-
-```
-clone https://github.com/ArcheSeraph/Erica_Talk.git
-npm i
-npm run build
-cd Erica_Talk-(win/darwin/linux)-x64
-./Erica_Talk 또는 npm test // 윈도우나 맥 사용자는 실행파일을 열면 됩니다.
-```
+* 저장소를 clone 합니다
+* clone 한 폴더 위치에 가서 npm i 를 입력합니다
+* npm run build 를 입력합니다.
+* 리눅스에서는 패키징된 폴더 경로로 들어가 ./Erica_Talk 을 입력합니다.
 
 ### _주의_
 * _로컬 사용자가 서버를 열어야 사용이 가능합니다_

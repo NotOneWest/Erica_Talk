@@ -89,6 +89,7 @@ function createWindow () {
       nodeIntegration: false
     }
   })
+  
   mainWindow.loadURL('http://172.17.65.113:3000');
 
   //mainWindow.webContents.openDevTools();
