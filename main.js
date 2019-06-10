@@ -14,14 +14,14 @@ app.once('ready', function() {
         label: 'Erica_Talk',
         submenu: [
           {
-            label: 'About Gradios',
+            label: 'About Erica_Talk',
             selector: 'orderFrontStandardAboutPanel:'
           },
           {
             type: 'separator'
           },
           {
-            label: 'Hide Gradios',
+            label: 'Hide Erica_Talk',
             accelerator: 'Command+H',
             selector: 'hide:'
           },
@@ -82,14 +82,14 @@ function createWindow () {
     resizable: false,
     width: 840,
     height: 640,
-    title: "Gradios",
+    title: "Erica_Talk",
     frame: true,
     webPreferences: {
       nativeWindowOpen: true,
       nodeIntegration: false
     }
   })
-  mainWindow.loadURL('http://192.168.56.1:3000');
+  mainWindow.loadURL('http://172.17.65.113:3000');
 
   //mainWindow.webContents.openDevTools();
   // Emitted when the window is closed.
