@@ -11,7 +11,7 @@ app.once('ready', function() {
   if (process.platform == 'darwin') {
     template = [
       {
-        label: 'Gradios',
+        label: 'Erica_Talk',
         submenu: [
           {
             label: 'About Gradios',
