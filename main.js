@@ -89,7 +89,7 @@ function createWindow () {
       nodeIntegration: false
     }
   })
-  mainWindow.loadURL('http://localhost:3000');
+  mainWindow.loadURL('http://192.168.56.1:3000');
 
   //mainWindow.webContents.openDevTools();
   // Emitted when the window is closed.
